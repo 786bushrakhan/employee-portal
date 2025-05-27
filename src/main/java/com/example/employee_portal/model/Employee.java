@@ -1,6 +1,17 @@
 package com.example.employee_portal.model;
 
 public class Employee {
+    public Employee(Long id, String name, String position) {
+        this.id = id;
+        this.name = name;
+        this.position = position;
+    }
+
+    private final Long id;
+
+    public Long getId() {
+        return id;
+    }
 
     private final String name;
 
@@ -12,10 +23,5 @@ public class Employee {
 
     public String getPosition() {
         return position;
-    }
-
-    public Employee(String name, String position) {
-        this.name = name;
-        this.position = position;
     }
 }
