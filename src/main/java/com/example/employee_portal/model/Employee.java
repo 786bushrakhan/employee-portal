@@ -1,5 +1,9 @@
 package com.example.employee_portal.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Employee {
     public Employee(Long id, String name, String position) {
         this.id = id;
@@ -7,6 +11,7 @@ public class Employee {
         this.position = position;
     }
 
+    @Id
     private final Long id;
 
     public Long getId() {
