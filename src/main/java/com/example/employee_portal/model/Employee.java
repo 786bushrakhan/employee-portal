@@ -5,6 +5,13 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Employee {
+
+    public Employee() {
+        this.id = null; // Default constructor for JPA
+        this.name = null;
+        this.position = null;
+    }
+
     public Employee(Long id, String name, String position) {
         this.id = id;
         this.name = name;

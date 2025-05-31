@@ -16,12 +16,13 @@ public class EmployeeController {
     // Define endpoints for employee-related operations here
     // For example, you can add methods to handle CRUD operations for employees
 
-    // Example endpoint
+    // Example endpoint to get all employees
+
     @GetMapping("/employees")
     public List<Employee> getAllEmployees() {
-        //return employeeService.getAllEmployees();
+        return employeeService.getAllEmployees();
         //return List.of("John Doe", "Jane Smith", "Alice Johnson");
-        return getEmployees();
+        //return getEmployees();
     }
 
     private static List<Employee> getEmployees() {
@@ -35,18 +36,18 @@ public class EmployeeController {
     // Example endpoint to get a specific employee by ID
     @GetMapping("/employees/{id}")
     public Employee getEmployeeById(@PathVariable Long id) {
-        //return employeeService.getEmployeeById(id);
-        return getEmployees().stream()
+        return employeeService.getEmployeeById(id);
+        /*return getEmployees().stream()// for loop java 8 feature
                 .filter(employee -> employee.getId().equals(id))
                 .findFirst()
-                .orElse(null); // Handle not found case appropriately
+                .orElse(null);*/ // Handle not found case appropriately
     }
 
     // Endpoint to count the number of employees
     @GetMapping("/employees/count")
-    public int countEmployees() {
-        //return employeeService.countEmployees();
-        return getEmployees().size();
+    public Long countEmployees() {
+        return employeeService.countEmployees();
+        //return getEmployees().size();
     }
 
     // Endpoint to get employee names
