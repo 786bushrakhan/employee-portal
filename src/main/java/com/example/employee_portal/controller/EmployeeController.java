@@ -74,4 +74,19 @@ public class EmployeeController {
     }
 
     // Add more methods as needed for your application
+
+    // Endpoint to update an employee (for demonstration purposes)
+    @PutMapping("/employees")
+    public void updateEmployee(@RequestBody Employee updatedEmployee) {
+        employeeService.updateEmployee(updatedEmployee);
+    }
+
+
+    // Endpoint to delete an employee by ID
+    @DeleteMapping("/employees/{id}")
+    public void deleteEmployee(@PathVariable Long id) {
+        employeeService.deleteEmployee(id);
+    }
+
 }
+

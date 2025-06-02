@@ -34,4 +34,15 @@ public class EmployeeService {
     public Long countEmployees() {
         return employeeRepository.count(); // Count the number of employees in the repository
     }
+
+    public void updateEmployee(Employee employee) {
+        employeeRepository.save(employee); // Update the employee in the repository
+        System.out.println("Updating employee with ID: " + employee.getId() + "New Name: " + employee.getName() + ", Position: " + employee.getPosition());
+    }
+
+    public void deleteEmployee(Long id) {
+        System.out.println("Deleting employee with ID: " + id);
+        employeeRepository.deleteById(id); // Delete the employee by ID from the repository
+    }
 }
+// This service class provides methods to manage employees, including adding, retrieving, counting, deleting, and updating employees.
